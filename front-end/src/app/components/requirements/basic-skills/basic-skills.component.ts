@@ -32,8 +32,11 @@ export class BasicSkillsComponent implements OnInit {
   addClass(theClass, units){
 
     this.outputSched.emit({theClass:theClass, units:units});
+    this.ac.serveClass(theClass, units);
    
   }
+
+  
 
    onSubmit(){
     console.log("pls b0ss");

@@ -8,9 +8,9 @@ import {BasicSkillsComponent} from '../requirements/basic-skills/basic-skills.co
   styleUrls: ['./classes.component.css'],
 })
 export class ClassesComponent implements OnInit {
- @Output() transferSched: EventEmitter<any> = new EventEmitter();
+//  @Output() transferSched: EventEmitter<any> = new EventEmitter();
 
-  theValue = [];
+  theValue ;
   constructor() { }
 
   ngOnInit() {
@@ -18,24 +18,24 @@ export class ClassesComponent implements OnInit {
 
   ngDoCheck(){
 
-    this.transferSched.emit(null);
+    // this.transferSched.emit(null);
   }
 
   callClass(getClass:{theClass:string, units:number}){
-    // console.log(num.test);
-    this.theValue.push({getClass:getClass.theClass,units:getClass.units});
-    return this.theValue;
-        // this.transferSched.emit(null);
+
+   return this.theValue = {getClass:getClass.theClass,units:getClass.units};
+
   }
 
+  
   getValue(){
-    console.log(this.theValue);
-    return this.theValue;
+
+    if(this.theValue != null){
+      // console.log(this.theValue); to uncomment maybe
+      // console.log(this.theValue.getClass); //JSON stringify
+    }
+
+    // return this.theValue;
   }
 
- onSubmit(){
-    console.log("pls b0ss");
-    // console.log(this.ac.getClasses());
-
-  }
 }

@@ -3,18 +3,13 @@
   <div class="well">
     <h2 >Your Schedule</h2>
     <!--<app-basic-skills (outputSched)="onSubmit()">  </app-basic-skills>-->
-    {{outputSched}}
+    <!--<div *ngIf="show">
+    {{theValue}}
+
+    </div>-->
     <ul *ngFor="let sched of schedule" class="nav">
       <li>{{sched}}</li>
 
-      <!--<li class="active"><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li> 
-      <li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>-->
     </ul>
   </div>
 </div>

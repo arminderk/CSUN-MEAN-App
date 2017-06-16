@@ -7,36 +7,25 @@ import {AddClassService} from '../../services/add-class.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent  {
-  sideClasses = [];
-  @Input() schedule ;
-  @Output() outputSched: EventEmitter<any> = new EventEmitter();
+  sideClasses;
+  show: boolean = false;
+  schedule = [] ;
 
    @Output() something: EventEmitter<any> = new EventEmitter();
 
-// sideClasses = this.ac.getClasses();
+     theValue ;
+
+
   constructor(private ac:AddClassService) { }
 
    ngDoCheck(){
     // if(this.something != undefined){
-    this.something.emit(null);
+      this.something.emit(null);
+      this.theValue = this.ac.getClasses();
+      this.schedule.push(this.theValue);
+      this.show = true;
 
     // }
-  }
-
-  onSubmit(){
-    console.log("pls b0ss");
-    // console.log(this.ac.getClasses());
-        // this.something.emit(null);
-
-  }
-
-
-  // classToAdd = this.ac.addClass();
-
- callClass(){
-    console.log('i like food');
-        // this.transferSched.emit(null);
-
   }
 
 

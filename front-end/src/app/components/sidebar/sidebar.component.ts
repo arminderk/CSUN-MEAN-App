@@ -1,31 +1,35 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {AddClassService} from '../../services/add-class.service';
+import { AddClassService } from '../../services/add-class.service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent  {
-  sideClasses;
-  show: boolean = false;
-  schedule = [] ;
+export class SidebarComponent {
 
-   @Output() something: EventEmitter<any> = new EventEmitter();
+  show: boolean = true;
+ 
 
-     theValue ;
+  @Output("checkClass") checkForClasses: EventEmitter<any> = new EventEmitter();
 
+  constructor(private ac: AddClassService) { }
 
-  constructor(private ac:AddClassService) { }
+  ngDoCheck() {
 
-   ngDoCheck(){
-    // if(this.something != undefined){
-      this.something.emit(null);
-      this.theValue = this.ac.getClasses();
-      this.schedule.push(this.theValue);
-      this.show = true;
-
+    //add to the sidebar if not null
+    // if (this.ac.theValue != null) {
+    //   // this.show = true;
     // }
+
+  }
+
+  removeClass(i){
+    console.log('deexnits');
+    if(this.ac.schedule == null){
+      this.show = true;
+    }
+    this.ac.deleteClass(i);
   }
 
 

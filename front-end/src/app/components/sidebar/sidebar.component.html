@@ -1,15 +1,20 @@
 <div class="col-md-4 col-xs-12 sidebar-offcanvas" id="sidebarLeft" role="navigation">
 
   <div class="well">
-    <h2 >Your Schedule</h2>
-    <!--<app-basic-skills (outputSched)="onSubmit()">  </app-basic-skills>-->
-    <!--<div *ngIf="show">
-    {{theValue}}
+    <h2>Your Schedule</h2>
 
-    </div>-->
-    <ul *ngFor="let sched of schedule" class="nav">
-      <li>{{sched}}</li>
+    <ul *ngFor="let sched of this.ac.schedule" class="nav">
+
+      <li><a href="" style="display:inline-block">{{sched.theClass}} ({{sched.units}})</a>
+        <button type="button" class="btn btn-danger btn-sm but" (click)="removeClass(sched)">Remove</button>
+      </li>
 
     </ul>
+
+    <div class="saveBut" [hidden]="this.ac.schedule != null">
+
+    <button type="button" class="btn btn-info btn-sm but-save" (click)="removeClass(sched)">Save</button>
+    </div>
+
   </div>
 </div>

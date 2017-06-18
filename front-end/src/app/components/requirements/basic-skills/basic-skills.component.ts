@@ -8,9 +8,9 @@ import {AddClassService} from '../../../services/add-class.service';
   styleUrls: ['./basic-skills.component.css']
 })
 export class BasicSkillsComponent implements OnInit {
-    @Output() outputSched: EventEmitter<{theClass:string, units:number}> = new EventEmitter();
 
-  // basicSkills  = ['FirstClass', '2ndClass', '3rdclass']; 
+  // @Output("transfer") transferClass: EventEmitter<{theClass:string, units:number}> = new EventEmitter();
+
   basicSkills  = [
     {
     className:"testClass1",
@@ -22,24 +22,17 @@ export class BasicSkillsComponent implements OnInit {
     }
   ];
 
-  testSchedule = [];
-
   constructor(private ac:AddClassService) { }
 
   ngOnInit() {
   }
 
+  //pass class info to the serve class service
   addClass(theClass, units){
 
-    this.outputSched.emit({theClass:theClass, units:units});
+    // this.transferClass.emit({theClass:theClass, units:units});
     this.ac.serveClass(theClass, units);
    
-  }
-
-  
-
-   onSubmit(){
-    console.log("pls b0ss");
   }
 
 

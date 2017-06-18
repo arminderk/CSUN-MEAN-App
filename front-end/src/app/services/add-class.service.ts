@@ -1,32 +1,45 @@
-import {Injectable, Input, Output, EventEmitter} from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class AddClassService {
 
-  schedule : {
-    theClass: string,
-    units: number
-  };
-  // @Output() outputSched = new EventEmitter();
+  schedule = [];
+  theValue:any;
 
   constructor() {}
 
   serveClass(theClass : string, units : number) {
 
-    return this.schedule = {
-      theClass,
-      units
-    };
+    // return this.schedule = {
+    //   theClass,
+    //   units
+    // };
+    this.theValue = {
+       theClass: theClass,
+      units: units
+    }
+
+    this.schedule.push({
+       theClass: theClass,
+      units: units
+    });
+    console.log(this.schedule);
 
   }
 
   getClasses() {
-    // console.log(this.schedule.theClass); console.log('deez nuts');
     if (this.schedule != null) {
-      console.log(this.schedule.theClass);
+      // console.log(this.schedule.units);
       
-    return this.schedule.theClass;
-    }
+    return this.schedule;
+    // return this.schedule.theClass;
   }
+  
+}
+
+deleteClass(i){
+  this.schedule.splice(this.schedule.indexOf(i),1);
+  console.log(this.schedule);
+}
 
 }

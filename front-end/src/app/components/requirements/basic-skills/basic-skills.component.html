@@ -28,16 +28,13 @@
                         <div *ngFor="let skill of basicSkills">
                           <li class="list-group-item"><a href="#test">{{skill.className}} ({{skill.units}})</a>
                             <button type="submit" class="btn btn-success btn-sm but" (click)="addClass(skill.className, skill.units)">Add Class</button>
+                          </li>
                         </div>
-
-                          <!--<div (outputSched)= "onSubmit()">
-                            
-                          </div>-->
+                        
                         <div *ngFor="let basic of testSchedule">
                             <li class="list-group-item"><a href="#test">{{basic}}</a>
                         </div>
 
-                        <!--<a href="#button"><button type="button" class="btn btn-danger btn-sm">Default</button></a>-->
                     </ul>
                   </div>
                 </div>

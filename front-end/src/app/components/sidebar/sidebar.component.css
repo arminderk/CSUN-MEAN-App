@@ -16,9 +16,23 @@
 }
 
 .well {
-    height: 80vh;
+    /*height: 80vh;*/
+    /*position:relative;*/
 }
 
 h2 {
     margin-top: 0px;
+}
+
+ul .but{
+    position:absolute;
+    right: 0;
+    bottom: 4px;
+}
+
+.saveBut{
+    text-align: center;
+    
+    position: relative;
+    /*float:right;*/
 }

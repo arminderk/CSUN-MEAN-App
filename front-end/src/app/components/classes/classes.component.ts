@@ -21,11 +21,11 @@ export class ClassesComponent implements OnInit {
     // this.transferSched.emit(null);
   }
 
-  callClass(getClass:{theClass:string, units:number}){
+  // callClass(getClass:{theClass:string, units:number}){
 
-   return this.theValue = {getClass:getClass.theClass,units:getClass.units};
+  //  return this.theValue = {getClass:getClass.theClass,units:getClass.units};
 
-  }
+  // } maybe delete
 
   
   getValue(){

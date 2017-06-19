@@ -25,10 +25,10 @@ export class SidebarComponent {
   }
 
   removeClass(i){
-    console.log('deexnits');
-    if(this.ac.schedule == null){
-      this.show = true;
-    }
+    // console.log('deexnits');
+    // if(this.ac.schedule == null){
+    //   this.show = true;
+    // }
     this.ac.deleteClass(i);
   }
 

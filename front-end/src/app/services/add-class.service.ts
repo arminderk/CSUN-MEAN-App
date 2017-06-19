@@ -8,7 +8,7 @@ export class AddClassService {
 
   constructor() {}
 
-  serveClass(theClass : string, units : number) {
+  serveClass(theClass : string, units : number, url: string) {
 
     // return this.schedule = {
     //   theClass,
@@ -21,7 +21,8 @@ export class AddClassService {
 
     this.schedule.push({
        theClass: theClass,
-      units: units
+      units: units,
+      url:url
     });
     console.log(this.schedule);
 

@@ -18,7 +18,7 @@
     </div>
 
     <div class="saveBut" [hidden]="this.ac.schedule.length == 0">
-      <button type="button" class="btn btn-info btn-sm but-save" (click)="removeClass(sched)">Save</button>
+      <button type="button" class="btn btn-info btn-sm but-save" (click)="saveToDb(this.ac.schedule)">Save</button>
     </div>
 
   </div>

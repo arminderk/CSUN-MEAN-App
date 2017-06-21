@@ -1,0 +1,12 @@
+.list-group .but{
+    position:absolute;
+    right: 0;
+    bottom: 4px;
+}
+
+.list-group a{
+    text-decoration: none;
+}
+.list-group a:hover{
+    color:red;
+}

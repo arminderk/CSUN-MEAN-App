@@ -1,26 +1,18 @@
 <div class="col-md-8 col-xs-12 pull-right">
 
-  <div class="panel-group" id="accordion1">
+  <div class="panel-group" id="nsAccord">
 
     <div class="panel panel-default accordion-group">
       <div class="panel-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
-        Basic Skills Requirement
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#nsAccord" href="#collapse2Accord">
+        Natural Sciences Requirement
       </a>
       </div>
-      <div id="collapseTwo" class="accordion-body collapse">
+      <div id="collapse2Accord" class="accordion-body collapse">
         <div class="panel-body">
 
-          <!-- Here we insert another nested accordion -->
 
-          <div class="accordion" id="accordion2">
-            <div class="panel panel-default accordion-group">
-              <div class="panel-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerOne">
-                   ANALYTICAL READING AND EXPOSITORY WRITING
-                  </a>
-              </div>
-              <div id="collapseInnerOne" class="accordion-body collapse in">
+              <div id="nscollapse" class="accordion-body collapse in">
                 <div class="panel-body">
                   <ul class="list-group">
 
@@ -37,32 +29,8 @@
                   </ul>
                 </div>
               </div>
-            </div>
-            <div class="panel panel-default accordion-group">
-              <div class="panel-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerTwo">
-                   ORAL COMMUNICATION 
-                  </a>
-              </div>
-              <div id="collapseInnerTwo" class="accordion-body collapse">
-                <div class="panel-body">
-                  <ul class="list-group">
 
-                    <div *ngFor="let skill of basicSkills">
-                      <li class="list-group-item"><a href="{{skill.url}}" target="_blank">{{skill.className}} ({{skill.units}})</a>
-                        <button type="submit" class="btn btn-success btn-sm but" (click)="addClass(skill.className, skill.units, skill.url)">Add Class</button>
-                      </li>
-                    </div>
-
-                    <div *ngFor="let basic of testSchedule">
-                      <li class="list-group-item"><a href="#test">{{basic}}</a>
-                    </div>
-
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+         
 
           <!-- Inner accordion ends here -->
 

@@ -10,14 +10,14 @@ export class NaturalSciencesComponent implements OnInit {
 
   basicSkills  = [
     {
-    className:"AAS 113B. Approaches to University Writing B",
+    className:" ASTR 152. Elementary Astronomy",
     units: 3,
-    url: 'http://catalog.csun.edu/academics/aas/courses/aas-113b/'
+    url: 'http://catalog.csun.edu/academics/phys/courses/astr-152/'
     },
     {
-    className:"AAS 114B. Approaches to University Writing B",
+    className:"ASTR 352. Current Developments in Astronomy",
     units: 3,
-    url: 'http://catalog.csun.edu/academics/aas/courses/aas-114b/'
+    url: 'http://catalog.csun.edu/academics/phys/courses/astr-352/'
     }
   ];
 

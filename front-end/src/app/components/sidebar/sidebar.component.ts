@@ -1,36 +1,41 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { AddClassService } from '../../services/add-class.service';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {AddClassService} from '../../services/add-class.service';
 
-@Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
-})
+@Component({selector: 'app-sidebar', templateUrl: './sidebar.component.html', styleUrls: ['./sidebar.component.css']})
 export class SidebarComponent {
 
-  show: boolean = true;
- 
+  show : boolean = true;
 
-  @Output("checkClass") checkForClasses: EventEmitter<any> = new EventEmitter();
+  @Output("checkClass")checkForClasses : EventEmitter < any > = new EventEmitter();
 
-  constructor(private ac: AddClassService) { }
+  constructor(private ac : AddClassService) {}
 
   ngDoCheck() {
 
-    //add to the sidebar if not null
-    // if (this.ac.theValue != null) {
-    //   // this.show = true;
-    // }
+    // add to the sidebar if not null if (this.ac.theValue != null) {   // this.show
+    // = true; }
 
   }
 
-  removeClass(i){
-    // console.log('deexnits');
-    // if(this.ac.schedule == null){
-    //   this.show = true;
-    // }
-    this.ac.deleteClass(i);
+  removeClass(i) {
+    // console.log('deexnits'); if(this.ac.schedule == null){   this.show = true; }
+    this
+      .ac
+      .deleteClass(i);
   }
 
+  saveToDb(sched) {
+
+    this.ac.addToDB(sched);
+
+    this.ac.addToDB(sched)
+           .subscribe(data => {
+             if (data.success) {
+               console.log('success!');
+             } else {
+               console.log('error :(');
+             }
+           });
+  }
 
 }

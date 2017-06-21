@@ -30,9 +30,9 @@
                       </li>
                     </div>
 
-                    <div *ngFor="let basic of testSchedule">
+                    <!--<div *ngFor="let basic of testSchedule">
                       <li class="list-group-item"><a href="#test">{{basic}}</a>
-                    </div>
+                    </div>-->
 
                   </ul>
                 </div>
@@ -48,15 +48,15 @@
                 <div class="panel-body">
                   <ul class="list-group">
 
-                    <div *ngFor="let skill of basicSkills">
+                    <div *ngFor="let skill of oralComs">
                       <li class="list-group-item"><a href="{{skill.url}}" target="_blank">{{skill.className}} ({{skill.units}})</a>
                         <button type="submit" class="btn btn-success btn-sm but" (click)="addClass(skill.className, skill.units, skill.url)">Add Class</button>
                       </li>
                     </div>
 
-                    <div *ngFor="let basic of testSchedule">
+                    <!--<div *ngFor="let basic of testSchedule">
                       <li class="list-group-item"><a href="#test">{{basic}}</a>
-                    </div>
+                    </div>-->
 
                   </ul>
                 </div>

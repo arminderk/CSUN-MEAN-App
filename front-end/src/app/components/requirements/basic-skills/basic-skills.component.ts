@@ -25,6 +25,19 @@ export class BasicSkillsComponent implements OnInit {
     }
   ];
 
+  oralComs = [
+     {
+    className:"AAS 151. Fundamentals of Public Speaking",
+    units: 3,
+    url: 'http://catalog.csun.edu/academics/aas/courses/aas-151/'
+    },
+    {
+    className:"COMS 151/L. Fundamentals of Public Speaking and Lab",
+    units: 3,
+    url: 'http://catalog.csun.edu/academics/coms/courses/coms-151l/'
+    }
+  ]
+
   constructor(private ac:AddClassService) { }
 
   ngOnInit() {

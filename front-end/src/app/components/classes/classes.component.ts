@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {BasicSkillsComponent} from '../requirements/basic-skills/basic-skills.component';
+import { AddClassService } from '../../services/add-class.service';
 
 
 @Component({
@@ -11,21 +12,13 @@ export class ClassesComponent implements OnInit {
 //  @Output() transferSched: EventEmitter<any> = new EventEmitter();
 
   theValue ;
-  constructor() { }
+  constructor(private ac:AddClassService) { }
 
   ngOnInit() {
   }
 
-  ngDoCheck(){
+ 
 
-    // this.transferSched.emit(null);
-  }
-
-  // callClass(getClass:{theClass:string, units:number}){
-
-  //  return this.theValue = {getClass:getClass.theClass,units:getClass.units};
-
-  // } maybe delete
 
   
   getValue(){

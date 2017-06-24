@@ -3,7 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const config = require('../config/database');
-// const User = require('../models/user');
+const User = require('../models/user');
 const Schedule = require('../models/schedule');
 
 router.post('/addClass', (req, res, next) => {
@@ -15,6 +15,9 @@ router.post('/addClass', (req, res, next) => {
     //         }
     //     ]
     // });
+
+    // let currUser = ;
+
     let newClass = new Schedule({
         sched: [req.body  
         ]
@@ -26,8 +29,8 @@ router.post('/addClass', (req, res, next) => {
             console.log('err occured');
         } else {
             res.json({success: true, msg: 'class was added'});
-            console.log(JSON.stringify(req.body));
-            console.log('\n' + newClass);
+            // console.log(JSON.stringify(req.body));
+            // console.log('\n' + newClass);
             console.log('\n class was added');
 
         }

@@ -18,6 +18,8 @@ const UserSchema = mongoose.Schema({
         type:String,
         require:true
     }
+    ,
+    sched:[]
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
@@ -47,3 +49,8 @@ module.exports.comparePassword = function(candidatePassword, hash, cb){
     cb(null, isMatch);
   });
 }
+
+// module.exports.addClass = function(newClass, cb){
+//     newClass.save(cb);
+//     console.log('something  '+newClass);
+// }

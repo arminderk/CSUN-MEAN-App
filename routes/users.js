@@ -11,7 +11,8 @@ router.post('/register', (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
     username: req.body.username,
-    password:req.body.password
+    password:req.body.password,
+    sched:null
   });
 
   User.addUser(newUser, (err, user)=>{
@@ -60,6 +61,8 @@ router.post('/authenticate', (req, res, next) => {
 // Profile
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
   res.json({user: req.user});
+  console.log('got profile');
+  console.log(req.user._id);
 });
 
 module.exports = router;

@@ -34,8 +34,17 @@ export class AuthService {
     headers.append('Authorization', this.authToken); //send token with request to the endpoint 
     headers.append('Content-Type', 'application/json');
     //  let ep = this.prepEndpoint('users/profile');
-      console.log('profile got');
     return this.http.get('http://localhost:3000/users/profile', { headers: headers })
+      .map(res => res.json());
+  }
+  //retrieve current user to update schedules
+  getCurrProf() {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken); //send token with request to the endpoint 
+    headers.append('Content-Type', 'application/json');
+    //  let ep = this.prepEndpoint('users/profile');
+    return this.http.get('http://localhost:3000/schedules/profile', { headers: headers })
       .map(res => res.json());
   }
 

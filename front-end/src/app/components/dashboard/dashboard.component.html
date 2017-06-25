@@ -1,2 +1,17 @@
-<h2 class="page-header">Dashboard</h2>
+<h2 class="page-header">Your Classes</h2>
 <p>Welcome to your dashboard</p>
+
+<div class="well col-md-12 text-center" *ngFor="let plans of userSched ; let i = index">
+        Schedule {{i+1}}
+        <br>
+    <div *ngFor="let inner of plans ; let j = index">
+
+    {{inner.theClass}} ({{inner.units}})
+    <div *ngIf="j==plans.length-1">
+         <button type="button" class="btn btn-danger btn-sm but" (click)="deleteSched(i)">Remove</button>
+         <button type="button" class="btn btn-info btn-sm but" (click)="editSched(i)">Edit</button>
+         <br>
+    </div>
+    </div>
+
+</div>

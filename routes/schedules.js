@@ -32,11 +32,18 @@ router.post('/addClass', (req, res, next) => {
             // console.log(JSON.stringify(req.body));
             // console.log('\n' + newClass);
             console.log('\n class was added');
+            // next();
 
         }
 
     });
 
+});
+
+router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
+  res.json({user: req.user});
+  console.log('got profile in schedule');
+//   console.log(req.user._id);
 });
 
 module.exports = router;

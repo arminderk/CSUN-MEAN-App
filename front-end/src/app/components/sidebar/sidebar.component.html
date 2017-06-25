@@ -2,7 +2,7 @@
 
   <div class="well">
     <h2>Your Schedule</h2>
-
+    
     <ul *ngFor="let sched of this.ac.schedule" class="nav">
 
       <li><a href="" style="display:inline-block">{{sched.theClass.substring(0,sched.theClass.indexOf('.'))}} ({{sched.units}})</a>
@@ -18,7 +18,14 @@
     </div>
 
     <div class="saveBut" [hidden]="this.ac.schedule.length == 0">
-      <button type="button" class="btn btn-info btn-sm but-save" (click)="saveToDb(this.ac.schedule)">Save</button>
+      <!--<form (ngSubmit)="saveToDb(this.ac.schedule, title)" #title="ngForm">
+      <div class="form-group">
+        <label for="name">Schedule Title</label>
+        <input ngModel type="text" class="form-control" id="name" name="title" required>
+      </div> 
+      <button type="submit" class="btn btn-info btn-sm but-save" >Save</button>
+    </form>-->
+      <button type="submit" class="btn btn-info btn-sm but-save" (click)='saveToDb(this.ac.schedule)'>Save</button>
     </div>
 
   </div>

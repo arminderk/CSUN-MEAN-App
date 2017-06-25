@@ -20,6 +20,9 @@ const UserSchema = mongoose.Schema({
     }
     ,
     sched:[]
+    // sched:{
+    //     type:[]
+    // }
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
@@ -32,6 +35,11 @@ module.exports.getUserByUsername = function(username, cb){
     const query = {username: username};
     User.findOne(query, cb);
 }
+
+// module.exports.updateUser = function(newSched, cb){
+//     // User.
+// }
+
 
 module.exports.addUser = function(newUser, cb){
     bcrypt.genSalt(10, (err, salt) => {
@@ -49,6 +57,7 @@ module.exports.comparePassword = function(candidatePassword, hash, cb){
     cb(null, isMatch);
   });
 }
+
 
 // module.exports.addClass = function(newClass, cb){
 //     newClass.save(cb);

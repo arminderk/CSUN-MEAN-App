@@ -24,5 +24,5 @@ const Schedule = module.exports = mongoose.model('Schedule', ScheduleSchema);
 
 module.exports.addClass = function(newClass, cb){
     newClass.save(cb);
-    console.log('something  '+newClass);
+    // console.log('something  '+newClass);
 }

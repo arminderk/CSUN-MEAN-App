@@ -36,3 +36,9 @@ ul .but{
     position: relative;
     /*float:right;*/
 }
+
+.form-control{
+    width:50%;
+    margin:0 auto;
+    height:30px;
+}

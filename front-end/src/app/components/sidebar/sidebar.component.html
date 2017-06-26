@@ -26,6 +26,7 @@
       <button type="submit" class="btn btn-info btn-sm but-save" >Save</button>
     </form>-->
       <button type="submit" class="btn btn-info btn-sm but-save" (click)='saveToDb(this.ac.schedule)'>Save</button>
+      <button *ngIf="this.ac.updateFlag==true" type="submit" class="btn btn-warning btn-sm but-save" (click)='cancelEdit()'>Cancel</button>
     </div>
 
   </div>

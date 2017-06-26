@@ -40,12 +40,20 @@ export class DashboardComponent implements OnInit {
 
   editSched(index){
 
-    console.log(index);
-    console.log(this.userSched);
+    // console.log(index);
+    this.ac.index = index;
+    // console.log(this.userSched);
     //load proper schedule content into the sidebar
+    // if(this.ac.updateFlag==false){
+      
+    if(this.ac.schedule.length>0){
+          this.ac.schedule = []; //empty schedule if it contains something
+     }
      for(let i = 0; i < this.userSched[index].length; i++){
+       
           this.ac.schedule.push(this.userSched[index][i]);
       }
+    // }
      this.ac.updateFlag = true; 
      this.router.navigate(['classes']);
   

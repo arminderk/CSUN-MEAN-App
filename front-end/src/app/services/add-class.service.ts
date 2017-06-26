@@ -10,7 +10,8 @@ export class AddClassService {
 
   schedule = [];
   updateFlag =false;
-
+  index : number;
+  
   constructor(private http : Http,private auth: AuthService) {}
 
   serveClass(theClass : string, units : number, url : string) {
@@ -55,13 +56,18 @@ export class AddClassService {
 
   updateSched(){
     console.log('updated schedule is '+ this.schedule);
-    // this.schedule.push
-    // let headers = new Headers();
-    // this.auth.loadToken();
-    // headers.append('Authorization', this.auth.authToken);
-    // headers.append('Content-Type', 'application/json');
-    //  return this.http.post('http://localhost:3000/users/delSched', this.schedule, { headers: headers })
-    //   .map(res => res.json());
+    let body = {
+      index:this.index,
+      content:this.schedule
+    }
+    console.log(body);
+
+    let headers = new Headers();
+    this.auth.loadToken();
+    headers.append('Authorization', this.auth.authToken);
+    headers.append('Content-Type', 'application/json');
+     return this.http.post('http://localhost:3000/users/upSched', body, { headers: headers })
+      .map(res => res.json());
   }
 
 

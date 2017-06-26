@@ -45,30 +45,43 @@ export class SidebarComponent {
   
   saveToDb(sched) {
 
-
+      //update existing schedule
       if(this.ac.updateFlag){
 
+        this.ac.updateSched().subscribe(data => {
+        if (data.success) {
+          console.log('schedule updated!');
+          this.router.navigate(['dashboard']);
         this.ac.updateFlag = false; //put this inside the subecribe statement
-        this.ac.updateSched();
-        //subscribe to update
-          // this.ac.schedule = []; //reset schedule list
-        
+          this.ac.schedule = []; //reset schedule list
+        } else {
+          console.log('error in schedule updating :(');
+        }
+      });
+
       }else{
 
-   
+        //add new schedule to dashboard
         this.ac.addToDB(sched).subscribe(data => {
         if (data.success) {
-          console.log('success!');
+          console.log('class schedule added!');
           this.router.navigate(['dashboard']);
           this.ac.schedule = []; //reset schedule list
         } else {
-          console.log('error :(');
+          console.log('error adding schedule :(');
         }
       });
 
       }
       
       
+  }
+
+  cancelEdit(){
+    this.ac.updateFlag = false;
+    this.router.navigate(['dashboard']);
+    this.ac.schedule = [];
+    console.log(this.ac.schedule);
   }
 
 }

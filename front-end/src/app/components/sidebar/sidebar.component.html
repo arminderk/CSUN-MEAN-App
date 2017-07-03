@@ -2,31 +2,25 @@
 
   <div class="well">
     <h2>Your Schedule</h2>
-    
     <ul *ngFor="let sched of this.ac.schedule" class="nav">
-
-      <li><a href="" style="display:inline-block">{{sched.theClass.substring(0,sched.theClass.indexOf('.'))}} ({{sched.units}})</a>
+      <li><a href="{{sched.url}}" target="_blank" style="display:inline-block">{{sched.theClass.substring(0,sched.theClass.indexOf('.'))}} ({{sched.units}})</a>
         <button type="button" class="btn btn-danger btn-sm but" (click)="removeClass(sched)">Remove</button>
       </li>
-
     </ul>
-
     <div *ngIf="this.ac.schedule.length == 0">
       <h3>
         You currently have no schedule
       </h3>
     </div>
-
     <div class="saveBut" [hidden]="this.ac.schedule.length == 0">
-      <!--<form (ngSubmit)="saveToDb(this.ac.schedule, title)" #title="ngForm">
-      <div class="form-group">
-        <label for="name">Schedule Title</label>
-        <input ngModel type="text" class="form-control" id="name" name="title" required>
-      </div> 
-      <button type="submit" class="btn btn-info btn-sm but-save" >Save</button>
-    </form>-->
-      <button type="submit" class="btn btn-info btn-sm but-save" (click)='saveToDb(this.ac.schedule)'>Save</button>
-      <button *ngIf="this.ac.updateFlag==true" type="submit" class="btn btn-warning btn-sm but-save" (click)='cancelEdit()'>Cancel</button>
+      <form (ngSubmit)="saveToDb(this.ac.schedule, title)" #title="ngForm">
+        <div class="form-group">
+          <label for="name">Schedule Title: </label>
+          <input [(ngModel)]="this.ac.currTitle" type="text" class="form-control" id="name" name="title" required>
+        </div>
+        <button type="submit" class="btn btn-info btn-sm but-save">Save</button>
+        <button *ngIf="this.ac.updateFlag==true" type="submit" class="btn btn-warning btn-sm but-save" (click)='cancelEdit()'>Cancel</button>
+      </form>
     </div>
 
   </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AddClassService } from '../../services/add-class.service';
 import { AuthService } from '../../services/auth.service';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -13,27 +13,16 @@ export class SidebarComponent {
   @Output("checkClass") checkForClasses: EventEmitter<any> = new EventEmitter();
 
   constructor(private ac: AddClassService, private auth: AuthService, private router: Router) { }
-  
-   ngOnInit() {
+
+  ngOnInit() {
     this.auth.getProfile().subscribe(profile => {
       this.user = profile.user;
-      
-      // //edit the selected class
-      // if(this.ac.index != undefined && profile.user.sched.length > 0){
-      //   for(let i = 0; i < profile.user.sched[this.ac.index].length; i++){
-      //     this.ac.schedule.push(profile.user.sched[this.ac.index][i]);
-      //   }
-      //   this.ac.index = undefined; //reset the index
-      //   //set something to false?
-      // }
-      
+      console.log(profile);
     },
-    err => {
-      console.log(err);
-      return false;
-    });
-
-    //load chosen class
+      err => {
+        console.log(err);
+        return false;
+      });
   }
 
   removeClass(i) {
@@ -42,27 +31,29 @@ export class SidebarComponent {
       .deleteClass(i);
   }
 
-  
-  saveToDb(sched) {
 
-      //update existing schedule
-      if(this.ac.updateFlag){
+  saveToDb(sched, title) {
 
-        this.ac.updateSched().subscribe(data => {
+    console.log(title.value.title);
+    //update existing schedule
+    if (this.ac.updateFlag) {
+
+      this.ac.updateSched(title.value.title).subscribe(data => {
         if (data.success) {
           console.log('schedule updated!');
           this.router.navigate(['dashboard']);
-        this.ac.updateFlag = false; //put this inside the subecribe statement
+          this.ac.updateFlag = false; //put this inside the subecribe statement
+          this.ac.currTitle = "";
           this.ac.schedule = []; //reset schedule list
         } else {
           console.log('error in schedule updating :(');
         }
       });
 
-      }else{
+    } else {
 
-        //add new schedule to dashboard
-        this.ac.addToDB(sched).subscribe(data => {
+      //   //add new schedule to dashboard
+      this.ac.addToDB(sched, title.value.title).subscribe(data => {
         if (data.success) {
           console.log('class schedule added!');
           this.router.navigate(['dashboard']);
@@ -72,15 +63,16 @@ export class SidebarComponent {
         }
       });
 
-      }
-      
-      
+    }
+
+
   }
 
-  cancelEdit(){
+  cancelEdit() {
     this.ac.updateFlag = false;
     this.router.navigate(['dashboard']);
     this.ac.schedule = [];
+    this.ac.currTitle = "";
     console.log(this.ac.schedule);
   }
 

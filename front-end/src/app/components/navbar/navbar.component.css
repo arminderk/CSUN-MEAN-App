@@ -1,0 +1,12 @@
+.navbar-default{
+    background-color:#D00D2D;
+}
+
+.navbar-default .navbar-nav>.active>a{
+    background-color:white;
+    color:#D00D2D;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:hover{
+    color: black;
+}

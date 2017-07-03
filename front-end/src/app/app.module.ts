@@ -21,6 +21,11 @@ import { ClassesComponent } from './components/classes/classes.component';
 import { BasicSkillsComponent } from './components/requirements/basic-skills/basic-skills.component';
 import { NaturalSciencesComponent } from './components/requirements/natural-sciences/natural-sciences.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ArtsnHumComponent } from './components/requirements/artsn-hum/artsn-hum.component';
+import { SocialSciComponent } from './components/requirements/social-sci/social-sci.component';
+import { LifeLearnComponent } from './components/requirements/life-learn/life-learn.component';
+import { CompCultComponent } from './components/requirements/comp-cult/comp-cult.component';
+import { CsReqsComponent } from './components/requirements/cs-reqs/cs-reqs.component';
 
 
 const appRoutes: Routes = [ 
@@ -45,7 +50,12 @@ const appRoutes: Routes = [
     ClassesComponent,
     BasicSkillsComponent,
     NaturalSciencesComponent,
-    SidebarComponent
+    SidebarComponent,
+    ArtsnHumComponent,
+    SocialSciComponent,
+    LifeLearnComponent,
+    CompCultComponent,
+    CsReqsComponent
   ],
   imports: [
     BrowserModule,

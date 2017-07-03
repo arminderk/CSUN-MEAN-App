@@ -17,8 +17,23 @@ export class NaturalSciencesComponent implements OnInit {
     {
     className:"ASTR 352. Current Developments in Astronomy",
     units: 3,
-    url: 'http://catalog.csun.edu/academics/phys/courses/astr-352/'
-    }
+    url: 'http://catalog.csun.edu/academics/ph`ys/courses/astr-352/'
+    },
+    {
+    className:"BIOL 100. Introductory Biologyc",
+    units: 3,
+    url: 'catalog.csun.edu/academics/biol/courses/biol-100/'
+    },
+    {
+    className:"CHEM 110. Chemistry in Action",
+    units: 3,
+    url: 'http://catalog.csun.edu/academics/chem/courses/chem-110/'
+    },
+    {
+    className:"GEOG 101. The Physical Environment",
+    units: 3,
+    url: 'http://catalog.csun.edu/academics/geog/courses/geog-101/'
+    },
   ];
 
   constructor(private ac:AddClassService) { }
@@ -29,7 +44,6 @@ export class NaturalSciencesComponent implements OnInit {
   //pass class info to the serve class service
   addClass(theClass, units, url){
 
-    // this.transferClass.emit({theClass:theClass, units:units});
     this.ac.serveClass(theClass, units, url);
    
   }

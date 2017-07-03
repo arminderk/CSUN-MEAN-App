@@ -1,0 +1,15 @@
+
+h2.page-header{
+    margin-bottom: 0px;
+}
+h2.class-title {
+    margin-bottom: -1%;
+    color: #D00D2D
+}
+
+a {
+    font-size: 1.2em;
+    margin: 5px 0;
+    display: inline-block;
+    color: white;
+}

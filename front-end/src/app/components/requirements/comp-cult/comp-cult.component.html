@@ -1,29 +1,31 @@
 <div class="col-md-8 col-xs-12 pull-right">
 
-  <div class="panel-group" id="nsAccord">
+  <div class="panel-group" id="cocuAccord">
 
     <div class="panel panel-default accordion-group">
       <div class="panel-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#nsAccord" href="#collapse2Accord">
-        Natural Sciences Requirement
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#cocuAccord" href="#collapse6">
+        Comparative Cultural Studies Requirement
       </a>
       </div>
-      <div id="collapse2Accord" class="accordion-body collapse">
+      <div id="collapse6" class="accordion-body collapse">
         <div class="panel-body">
 
-              <div id="nscollapse" class="accordion-body collapse in">
+              <div id="cocuCollapse" class="accordion-body collapse in">
                 <div class="panel-body">
                   <ul class="list-group">
 
-                    <div *ngFor="let skill of basicSkills">
+                    <div *ngFor="let skill of compCult">
                       <li class="list-group-item"><a href="{{skill.url}}" target="_blank">{{skill.className}} ({{skill.units}})</a>
                         <button type="button" class="btn btn-success btn-sm but" (click)="addClass(skill.className, skill.units, skill.url)">Add Class</button>
                       </li>
                     </div>
-
                   </ul>
                 </div>
               </div>
+
+          <!-- Inner accordion ends here -->
+
         </div>
       </div>
     </div>

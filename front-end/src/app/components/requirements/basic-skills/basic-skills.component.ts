@@ -22,6 +22,21 @@ export class BasicSkillsComponent implements OnInit {
     className:"AAS 114B. Approaches to University Writing B",
     units: 3,
     url: 'http://catalog.csun.edu/academics/aas/courses/aas-114b/'
+    },
+    {
+    className:"AAS 115. Approaches to University Writing",
+    units: 3,
+    url: 'http://catalog.csun.edu/academics/aas/courses/aas-115/'
+    },
+    {
+    className:"ENGL 113B. Approaches to University Writing B",
+    units: 3,
+    url: 'http://catalog.csun.edu/academics/engl/courses/engl-113b/'
+    },
+    {
+    className:"ENGL 115. Approaches to University Writing",
+    units: 3,
+    url: 'http://catalog.csun.edu/academics/engl/courses/engl-115/'
     }
   ];
 
@@ -35,7 +50,22 @@ export class BasicSkillsComponent implements OnInit {
     className:"COMS 151/L. Fundamentals of Public Speaking and Lab",
     units: 3,
     url: 'http://catalog.csun.edu/academics/coms/courses/coms-151l/'
-    }
+    },
+    {
+    className:"CAS 151. Fundamentals of Public Speaking",
+    units: 3,
+    url: 'http://catalog.csun.edu/academics/cas/courses/cas-151/'
+    },
+    {
+    className:"CHS 151. Freshman Speech Communication",
+    units: 3,
+    url: 'catalog.csun.edu/academics/chs/courses/chs-151/'
+    },
+    {
+    className:"AFRS 151. Freshman Speech Communication",
+    units: 3,
+    url: 'http://catalog.csun.edu/academics/afrs/courses/afrs-151/c'
+    },
   ]
 
   constructor(private ac:AddClassService) { }

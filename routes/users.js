@@ -89,15 +89,14 @@ router.post('/delSched', passport.authenticate('jwt', {session: false}), (req, r
 router.post('/upSched', passport.authenticate('jwt', {session: false}), (req, res, next) => {
 
   let currUser = User.findById(req.user._id, (err, user) => {
-    console.log(req.body);
-    console.log(user.sched[req.body.index]);
-    
-    // console.log(`User schedule at index ${req.body.val} has been deleted`);
+    console.log(user.sched[req.body.index]);   
+    console.log(user.sched); 
     if (err) {
       res.json({success: false, msg: 'failed to add schedule'});
     } else {
       res.json({success: true, msg: 'Schedule Added!'});
-      user.sched.splice(req.body.index, 1, req.body.content);
+      user.sched[req.body.index].title = req.body.title;
+      user.sched.splice(req.body.index, 1, {title:user.sched[req.body.index].title ,schedule:req.body.content});
       user.save();
     }
   });

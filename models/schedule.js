@@ -1,3 +1,4 @@
+// this file is not used--Just keeping here for reference
 const mongoose = require('mongoose');
 const config = require('../config/database');
 
@@ -24,5 +25,4 @@ const Schedule = module.exports = mongoose.model('Schedule', ScheduleSchema);
 
 module.exports.addClass = function(newClass, cb){
     newClass.save(cb);
-    // console.log('something  '+newClass);
 }

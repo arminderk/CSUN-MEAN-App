@@ -25,7 +25,6 @@ const users = require('./routes/users');
 const schedules = require('./routes/schedules');
 
 // Port Number
-// const port = 3000;
 const port = process.env.PORT || 8080;
 
 // CORS Middleware

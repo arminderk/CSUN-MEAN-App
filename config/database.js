@@ -1,4 +1,4 @@
 module.exports = {
-  database: 'mongodb://localhost:27017/mean-csun',
+  database: 'mongodb://novell:novellsdb@ds145952.mlab.com:45952/csun-mean',
   secret: 'yoursecret'
 }

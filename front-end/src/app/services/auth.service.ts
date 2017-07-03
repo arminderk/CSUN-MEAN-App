@@ -15,7 +15,7 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     //  let ep = this.prepEndpoint('users/register');
-    return this.http.post('http://localhost:3000/users/register', user, { headers: headers })
+    return this.http.post('users/register', user, { headers: headers })
       .map(res => res.json());
   }
 
@@ -24,7 +24,7 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     // let ep = this.prepEndpoint('users/authenticate');
-    return this.http.post('http://localhost:3000/users/authenticate', user, { headers: headers })
+    return this.http.post('users/authenticate', user, { headers: headers })
       .map(res => res.json());
   }
 
@@ -34,7 +34,7 @@ export class AuthService {
     headers.append('Authorization', this.authToken); //send token with request to the endpoint 
     headers.append('Content-Type', 'application/json');
     //  let ep = this.prepEndpoint('users/profile');
-    return this.http.get('http://localhost:3000/users/profile', { headers: headers })
+    return this.http.get('users/profile', { headers: headers })
       .map(res => res.json());
   }
   //retrieve current user to update schedules
@@ -44,7 +44,7 @@ export class AuthService {
     headers.append('Authorization', this.authToken); //send token with request to the endpoint 
     headers.append('Content-Type', 'application/json');
     //  let ep = this.prepEndpoint('users/profile');
-    return this.http.get('http://localhost:3000/schedules/profile', { headers: headers })
+    return this.http.get('schedules/profile', { headers: headers })
       .map(res => res.json());
   }
 

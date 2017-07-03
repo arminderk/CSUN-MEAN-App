@@ -44,7 +44,7 @@ export class AddClassService {
     this.auth.loadToken();
     headers.append('Authorization', this.auth.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/profUp', body, { headers: headers })
+    return this.http.post('users/profUp', body, { headers: headers })
       .map(res => res.json());
   }
 
@@ -55,7 +55,7 @@ export class AddClassService {
     this.auth.loadToken();
     headers.append('Authorization', this.auth.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/delSched', val, { headers: headers })
+    return this.http.post('users/delSched', val, { headers: headers })
       .map(res => res.json());
   }
 
@@ -72,7 +72,7 @@ export class AddClassService {
     this.auth.loadToken();
     headers.append('Authorization', this.auth.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/upSched', body, { headers: headers })
+    return this.http.post('users/upSched', body, { headers: headers })
       .map(res => res.json());
   }
 
